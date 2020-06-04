@@ -12,17 +12,55 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/**
- * Adds a random greeting to the page.
- */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
+jQuery(document).ready(function(){
 
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+const distanceToNextImage = -72;
+let currentImageNumber = 0;
 
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+$(".lightbox").hide();
+$("#greeting-container").hide();
+
+$(".item").click(function() {
+  currentImageNumber = parseInt($(this).attr("id"), 10);
+  $("#carousel-strip").css("left", currentImageNumber * distanceToNextImage + "vw");
+  $(".lightbox").show();
+});
+
+//Left and right
+$("#right").click(function() {
+  currentImageNumber = (currentImageNumber + 1) % 12;
+  $("#carousel-strip").css("left", currentImageNumber * distanceToNextImage + "vw");
+});
+
+$("#left").click(function() {
+  currentImageNumber = currentImageNumber == 0 ? 11 : (currentImageNumber - 1);
+  $("#carousel-strip").css("left", currentImageNumber * distanceToNextImage + "vw");
+});
+
+$("#overlay").click(function() {
+  $(".lightbox").hide();
+});
+});
+
+function getComments() {
+    $("#greeting-container").show();
+  fetch('/data').then(response => response.json()).then((strArr) => {
+    document.getElementById('comments').innerText = strArr;
+  });
 }
+
+function showComments() {
+    $("#greeting-container").show();
+}
+
+function hideComments() {
+    $("#greeting-container").hide();
+}
+
+function getTranslation() {
+    fetch('/data/translation').then(response => response.json()).then((strArr) => {
+    document.getElementById('comments').innerText = strArr;
+  });
+}
+
+

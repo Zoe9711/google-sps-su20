@@ -1,18 +1,159 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lemonada&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Oxanium&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
+    <div class="container">
+      <div id="content">
+        <h1>My Portfolio</h1>
+        <!-- <p id="people" onmouseover="getComments()" onmouseout="hideComments()">People have said...</p>
+        <div id="greeting-container" onmouseover="showComments()" onmouseout="hideComments()">
+            <div id="comments">
+
+            </div>
+            <div id="translate" onmouseover="getTranslation()" onmouseout="getComments()">
+                Translate
+            </div>
+        </div>    -->
+        <p>About me :D &darr;
+            </p>     
+        <p>
+          I'm a rising junior at Cal majoring in CS and Applied Maths. I enjoy
+          coding and writing. Recently I've been reading
+          <a href="https://www.goodreads.com/book/show/315512.Evening_in_Byzantium">Evening in Byzantium</a>
+          and <a href="https://www.goodreads.com/en/book/show/35693558-world-of-warcraft-chronicle">WoW Chronicle Volume III</a>
+          .
+        </p>
+
+        <p>
+          Below is a gallery of some of the photos I took in Alaska, November 2018.
+        </p>
+      </div>
+
+      <div class="gallery">
+        <div class="row">
+          <div class="item" id="0">
+            <img src="images/IMG_3610.jpg" />
+          </div>
+          <div class="item" id="1">
+            <img src="images/IMG_3611.jpg" />
+          </div>
+          <div class="item" id="2">
+            <img src="images/IMG_3612.jpg" />
+          </div>
+          <div class="item" id="3">
+            <img src="images/IMG_3613.jpg" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="item" id="4">
+            <img src="images/IMG_3614.jpg" />
+          </div>
+          <div class="item" id="5">
+            <img src="images/IMG_3615.jpg" />
+          </div>
+          <div class="item" id="6">
+            <img src="images/IMG_3616.jpg" />
+          </div>
+          <div class="item" id="7">
+            <img src="images/IMG_3617.jpg" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="item" id="8">
+            <img src="images/IMG_3618.jpg" />
+          </div>
+          <div class="item" id="9">
+            <img src="images/IMG_3619.jpg" />
+          </div>
+          <div class="item" id="10">
+            <img src="images/IMG_3620.jpg" />
+          </div>
+          <div class="item" id="11">
+            <img src="images/IMG_3621.jpg" />
+          </div>
+        </div>
+      </div>
+
+      <div class="lightbox">
+        <div id="overlay"></div>
+        <div id="left">&lt;</div>
+        <div id="carousel-container">
+          <div id="carousel-strip">
+            <div class="carousel-section">
+              <img src="images/IMG_3610.jpg" />
+            </div>
+            <div class="carousel-section">
+              <img src="images/IMG_3611.jpg" />
+            </div>
+            <div class="carousel-section">
+              <img src="images/IMG_3612.jpg" />
+            </div>
+            <div class="carousel-section">
+              <img src="images/IMG_3613.jpg" />
+            </div>
+            <div class="carousel-section">
+              <img src="images/IMG_3614.jpg" />
+            </div>
+            <div class="carousel-section">
+              <img src="images/IMG_3615.jpg" />
+            </div>
+            <div class="carousel-section">
+              <img src="images/IMG_3616.jpg" />
+            </div>
+            <div class="carousel-section">
+              <img src="images/IMG_3617.jpg" />
+            </div>
+            <div class="carousel-section">
+              <img src="images/IMG_3618.jpg" />
+            </div>
+            <div class="carousel-section">
+              <img src="images/IMG_3619.jpg" />
+            </div>
+            <div class="carousel-section">
+              <img src="images/IMG_3620.jpg" />
+            </div>
+            <div class="carousel-section">
+              <img src="images/IMG_3621.jpg" />
+            </div>
+          </div>
+        </div>
+        <div id="right">&gt;</div>
+      </div>
+
+        <!-- <form action="/data" method="POST">
+
+      <p>Comments, suggestions...I'd love to hear from you!</p>
+      <textarea name="text-input">I think...</textarea>
+      <input type="submit" />
+        </form> -->
+
+    <div class="game_container">
+        <p>My game here :D <a href="https://uragano.itch.io/dusk-island" style="color: rgb(179, 71, 0);text-shadow: 0 0 8px rgb(214, 114, 0);">Dusk Island</a>
+        </p>
+    </div>
+    <div class="video_container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/MIEQIEB2G_o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    
+
+      <div class="contact_container">
+        <div id="contact">
+          <a href="https://www.linkedin.com/in/zoe-zhang-yunqi/">LinkedIn</a>
+        </div>
+        <div id="contact">
+          <a href="mailto:zhangyunqi1126@gmail.com">Contact</a>
+        </div>
+      </div>
     </div>
   </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="script.js"></script>
 </html>
